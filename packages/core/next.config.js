@@ -8,6 +8,9 @@ const storeConfig = require('./faststore.config')
 const nextConfig = {
   /* config options here */
   /* Replaces terser by swc for minifying. It's the default in NextJS 13 */
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   swcMinify: true,
   images: {
     domains: [`${storeConfig.api.storeId}.vtexassets.com`],

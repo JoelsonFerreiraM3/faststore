@@ -1,0 +1,31 @@
+type Fields {
+  key: String!
+  value: String!
+}
+
+type CustomApp {
+  fields: [Fields!]!
+  id: String!
+  major: Int!
+}
+
+type CustomData {
+  customApps: [CustomApp!]!
+}
+
+type Order {
+  orderFormId: String!
+  customData: CustomData
+}
+
+type Query {
+  orderForm(id: String!): Order!
+  customData(appId: String!, field: String!): String
+}
+
+type Mutation {
+  addExtraParts(extraOrderData: String!): Boolean
+  removeExtraParts(skuGtin: String): Boolean
+  addFolderImprinting(data: String!): Boolean
+  removeFolderImprinting(skuGtin: String): Boolean
+}

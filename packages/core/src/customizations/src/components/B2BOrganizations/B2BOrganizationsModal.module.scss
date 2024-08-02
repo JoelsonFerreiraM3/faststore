@@ -1,0 +1,83 @@
+.modalContentWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--jwp-color-white);
+  border-radius: var(--fs-radius-4);
+  box-shadow: 0 2rem 2rem 0 rgba(0, 0, 0, 0.075);
+  min-width: min(650px, 90vw);
+
+  [data-fs-modal-body] > * + * {
+    margin-top: var(--fs-spacing-2);
+  }
+
+  [data-fs-orgs-counter] {
+    text-align: end;
+  }
+
+  [data-fs-modal-body] {
+    padding: 3rem;
+  }
+
+  [data-fs-modal-header-title] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-4);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-overlay] {
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-bottom: var(--fs-spacing-9);
+  }
+
+  [data-fs-join-button] {
+    width: 100%;
+  }
+
+  @include media('<=tablet') {
+    [data-fs-modal] {
+      width: calc(100vw / 3);
+      min-width: calc(1500px / 3);
+    }
+  }
+}
+
+.modalHeaderWrapper {
+  [data-fs-modal-header] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: var(--jwp-color-dark-grey);
+    height: var(--fs-text-size-12);
+    position: relative;
+    border-radius: var(--fs-radius-4) var(--fs-radius-4) 0 0;
+  }
+
+  [data-fs-modal-header-title] {
+    color: var(--jwp-color-white);
+  }
+
+  [data-fs-button] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  [data-fs-button-wrapper] svg {
+    color: var(--jwp-color-white);
+  }
+
+  [data-fs-button][data-fs-button-variant='tertiary']:hover
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus-visible
+    [data-fs-button-wrapper] {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
